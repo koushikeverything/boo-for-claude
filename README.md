@@ -148,6 +148,20 @@ the full menu to pick from. *Product analytics (Amplitude / Mixpanel / PostHog) 
 
 ## Install
 
+### Claude apps (desktop / web) — no CLI
+
+In the Claude desktop or web app, go to **Settings → Plugins → Add marketplace → "Add from a
+repository"** and paste the repo:
+
+```
+koushikeverything/boo-for-claude
+```
+
+<sub>Or the full git URL: `https://github.com/koushikeverything/boo-for-claude.git`.</sub>
+
+Once the marketplace syncs, **install the `boo` plugin** from it and toggle it on — it's now available
+in your chats and Cowork. (This is the GUI twin of the CLI command below.)
+
 ### Claude Code (one command)
 
 ```bash
