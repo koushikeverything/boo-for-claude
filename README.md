@@ -99,7 +99,7 @@ make package           # build dist/daily-brief-skill.zip + team-brief-skill.zip
 
 - **Claude Code (one-command, via the bundled marketplace):**
   ```bash
-  claude plugin marketplace add <your-org>/boo-for-claude   # GitHub owner/repo (or a local ./path)
+  claude plugin marketplace add koushikeverything/boo-for-claude   # GitHub owner/repo (or a local ./path)
   claude plugin install boo@boo-marketplace
   ```
   Installs all 7 Skills (verified: `make check` + a full install→uninstall roundtrip). Uninstall with
