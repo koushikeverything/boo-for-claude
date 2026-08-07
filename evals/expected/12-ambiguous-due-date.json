@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-ambiguous",
+      "title": "Return the library books 'by early next week'",
+      "detail": "The exact due date is unclear — the email says 'early next week,' not a specific day.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-library" } ],
+      "evidence": "Library notice: 'Please return your items by early next week.' (no exact date given)",
+      "urgency": "upcoming",
+      "confidence": "low",
+      "effort_minutes": 10,
+      "conflict_state": "none",
+      "dedup_key": "task:return-library-books:approx"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "One deadline ('early next week') was too vague to pin to a date; I did not invent one.", "category": "low_confidence" }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-swim-conflict",
+      "title": "Confirm Leo's swim-meet date",
+      "detail": "Sources disagree — please confirm before I change anything.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-swim-009" },
+        { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-swim" }
+      ],
+      "evidence": "Coach email says Sunday Aug 10, 10:00 AM; the existing calendar event is on Saturday Aug 9.",
+      "urgency": "soon",
+      "confidence": "medium",
+      "effort_minutes": 5,
+      "actions": [ { "type": "say_command", "label": "Fix my calendar", "say": "The email is right — update my calendar to Sunday." } ],
+      "conflict_state": "conflicted",
+      "dedup_key": "event:leo-swim-meet:conflict"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [
+    {
+      "description": "Swim-meet date disagreement: Gmail (coach email) says Sunday, Aug 10 at 10:00 AM; Calendar has it on Saturday, Aug 9.",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-swim-009" },
+        { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-swim" }
+      ]
+    }
+  ],
+  "omissions": []
+}

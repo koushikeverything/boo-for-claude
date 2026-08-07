@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "complete" },
+    { "account_id": "linear", "account_label": "Linear", "source": "linear", "capability": "tracking", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-conflict",
+      "title": "Confirm status of GRW-231 / PR #514",
+      "detail": "Your tools disagree — please confirm before I change anything.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        { "source": "linear", "account_id": "linear", "account_label": "Linear", "workspace": "GRW", "source_ref": "linear:GRW-231" },
+        { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api#514" }
+      ],
+      "evidence": "Linear marks GRW-231 done; the linked GitHub PR #514 is still open.",
+      "urgency": "soon",
+      "confidence": "medium",
+      "effort_minutes": 5,
+      "conflict_state": "conflicted",
+      "dedup_key": "code:pr-acme-api-514"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [
+    {
+      "description": "Linear marks GRW-231 done, but its GitHub PR #514 is still open — please confirm which is right.",
+      "citations": [
+        { "source": "linear", "account_id": "linear", "account_label": "Linear", "source_ref": "linear:GRW-231" },
+        { "source": "github", "account_id": "github", "account_label": "GitHub", "source_ref": "github:acme/api#514" }
+      ]
+    }
+  ],
+  "omissions": []
+}

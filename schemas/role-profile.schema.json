@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boo-for-claude.local/schemas/role-profile.schema.json",
+  "title": "Boo for Claude — role profile (v2)",
+  "description": "Per-user, reviewable config for the role/team brief. Generalizes boo-preferences.json: role + team + the provider chosen for each capability slot + scope. The user owns and can edit it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "user", "role", "timezone", "brief_time", "connections"],
+  "properties": {
+    "version": { "const": "2.0" },
+    "user": { "type": "string", "minLength": 1 },
+    "role": { "enum": ["product_designer", "design_lead", "software_engineer", "engineering_lead", "product_manager", "head_of_product", "qa_engineer", "data_analyst"] },
+    "team": { "type": "string", "maxLength": 100 },
+    "timezone": { "type": "string", "minLength": 3 },
+    "brief_time": { "type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$" },
+    "weekend_behavior": { "enum": ["same", "skip", "lighter"] },
+    "verbosity": { "enum": ["short", "normal", "detailed"] },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["capability", "provider", "status"],
+        "properties": {
+          "capability": { "enum": ["productivity", "chat", "design", "code", "tracking", "docs", "incidents", "observability", "support", "analytics"] },
+          "provider": { "type": "string", "minLength": 1 },
+          "workspace": { "type": "string" },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "repos": { "type": "array", "items": { "type": "string" } },
+              "projects": { "type": "array", "items": { "type": "string" } },
+              "channels": { "type": "array", "items": { "type": "string" } },
+              "boards": { "type": "array", "items": { "type": "string" } },
+              "teams": { "type": "array", "items": { "type": "string" } },
+              "files": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "status": { "enum": ["active", "paused", "reconnect_needed", "removed"] }
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quiet_categories": { "type": "array", "items": { "type": "string" } },
+        "important_people": { "type": "array", "items": { "type": "string" } },
+        "important_projects": { "type": "array", "items": { "type": "string" } },
+        "show_deals": { "type": "boolean" }
+      }
+    }
+  }
+}

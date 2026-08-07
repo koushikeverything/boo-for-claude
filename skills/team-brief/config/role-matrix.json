@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "description": "Role → capability requirement. Levels: mandatory (gates a complete brief), recommended (offered, skippable), optional. A slot omitted for a role is not offered to that role. Mirrors docs/ROLE-TOOL-MODEL.md. INVARIANT: a slot may be 'mandatory' only if at least one of its providers has a native connector. NOTE: analytics (Amplitude/Mixpanel/PostHog) currently has no native connector, so it is 'recommended' (not mandatory) for PM/Head/Data until an analytics connector is verified or built (Phase 9).",
+  "requirement_levels": ["mandatory", "recommended", "optional"],
+  "roles": {
+    "product_designer": {
+      "label": "Product Designer",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "design": "mandatory", "tracking": "recommended", "docs": "optional", "analytics": "optional" }
+    },
+    "design_lead": {
+      "label": "Design Lead",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "design": "mandatory", "code": "optional", "tracking": "recommended", "docs": "recommended", "support": "optional", "analytics": "recommended" }
+    },
+    "software_engineer": {
+      "label": "Software Engineer",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "code": "mandatory", "design": "optional", "tracking": "recommended", "docs": "optional", "incidents": "recommended", "observability": "recommended" }
+    },
+    "engineering_lead": {
+      "label": "Engineering Lead / Head",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "code": "mandatory", "tracking": "mandatory", "incidents": "mandatory", "design": "optional", "docs": "recommended", "observability": "recommended", "support": "optional", "analytics": "optional" }
+    },
+    "product_manager": {
+      "label": "Product Manager",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "tracking": "mandatory", "analytics": "recommended", "design": "recommended", "code": "recommended", "docs": "recommended", "support": "recommended", "incidents": "optional", "observability": "optional" }
+    },
+    "head_of_product": {
+      "label": "Head of Product",
+      "slots": { "productivity": "mandatory", "chat": "mandatory", "tracking": "mandatory", "support": "mandatory", "analytics": "recommended", "design": "recommended", "docs": "recommended", "code": "optional", "incidents": "optional" }
+    },
+    "qa_engineer": {
+      "label": "QA Engineer",
+      "slots": { "productivity": "mandatory", "tracking": "mandatory", "chat": "recommended", "code": "recommended", "incidents": "recommended", "observability": "recommended", "design": "optional", "docs": "optional", "support": "optional", "analytics": "optional" }
+    },
+    "data_analyst": {
+      "label": "Data / Analyst",
+      "slots": { "productivity": "mandatory", "analytics": "recommended", "chat": "recommended", "tracking": "recommended", "docs": "recommended", "support": "recommended", "code": "optional", "observability": "optional" }
+    },
+    "superhuman": {
+      "label": "Superhuman (your own mix)",
+      "note": "The many-hats role (founder/generalist). Only productivity is baseline-mandatory; every other slot is offered as free-pick optional so the user connects any combination. Onboarding presents the full connectable menu. Unconnectable slots (e.g. analytics today) are still hidden by the availability gate.",
+      "slots": { "productivity": "mandatory", "chat": "optional", "design": "optional", "code": "optional", "tracking": "optional", "docs": "optional", "incidents": "optional", "observability": "optional", "support": "optional", "analytics": "optional" }
+    }
+  }
+}

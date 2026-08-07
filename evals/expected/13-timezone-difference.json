@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [],
+  "calendar": [
+    {
+      "id": "cal-nyc",
+      "title": "Call with the New York office",
+      "all_day": false,
+      "start": "2026-08-07T09:00:00",
+      "end": "2026-08-07T09:30:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 30,
+      "context": "Invite was created in America/New_York at 12:00 PM; shown here as 9:00 AM your time.",
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-nyc" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:nyc-call:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

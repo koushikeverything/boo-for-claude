@@ -1,0 +1,38 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "complete" },
+    { "account_id": "slack", "account_label": "Slack", "source": "slack", "capability": "chat", "status": "complete" },
+    { "account_id": "linear", "account_label": "Linear", "source": "linear", "capability": "tracking", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-pr-merged-view",
+      "title": "Review PR #514 — rate-limit middleware",
+      "detail": "Requested your review; also discussed in Slack and tracked in Linear.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api#514" },
+        { "source": "slack", "account_id": "slack", "account_label": "Slack", "workspace": "#eng", "source_ref": "slack:C2/9" },
+        { "source": "linear", "account_id": "linear", "account_label": "Linear", "workspace": "GRW", "source_ref": "linear:GRW-231" }
+      ],
+      "evidence": "Same PR referenced in GitHub (review requested), a Slack thread, and Linear issue GRW-231.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

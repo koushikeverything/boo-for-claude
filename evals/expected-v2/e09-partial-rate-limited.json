@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "partial", "safe_reason": "rate limited — some results truncated" },
+    { "account_id": "google", "account_label": "Google Workspace", "source": "calendar", "capability": "productivity", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-pr",
+      "title": "Review PR #514 — rate-limit middleware",
+      "detail": "Your review requested (GitHub results were partial this run).",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [ { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api#514" } ],
+      "evidence": "PR #514 review requested.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "GitHub was rate-limited, so some PRs/issues may be missing this run.", "category": "over_limit" }
+  ]
+}

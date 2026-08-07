@@ -1,0 +1,138 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Priya",
+  "role": "design_lead",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "figma",
+      "account_label": "Figma",
+      "source": "figma",
+      "capability": "design",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-specs",
+      "title": "Approve final checkout specs",
+      "detail": "Eng is blocked on your sign-off.",
+      "section": "top_of_mind",
+      "capability": "design",
+      "citations": [
+        {
+          "source": "figma",
+          "account_id": "figma",
+          "account_label": "Figma",
+          "workspace": "Growth",
+          "source_ref": "figma:checkout/comment-9"
+        }
+      ],
+      "evidence": "Figma comment: '@Priya approve the final specs so we can build.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "conflict_state": "none",
+      "dedup_key": "design:checkout-specs:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "t-unblock",
+      "title": "Unblock Ravi on the empty-state pattern",
+      "detail": "He's waiting on a direction call.",
+      "section": "top_of_mind",
+      "capability": "chat",
+      "citations": [
+        {
+          "source": "slack",
+          "account_id": "slack",
+          "account_label": "Slack",
+          "workspace": "#design",
+          "source_ref": "slack:D1/3"
+        }
+      ],
+      "evidence": "Ravi: 'which empty-state pattern should I use?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "conflict_state": "none",
+      "dedup_key": "chat:empty-state-direction:2026-08-07",
+      "rank": 1
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "f-spec",
+          "title": "Checkout spec changed in Linear",
+          "detail": "Acceptance criteria updated overnight.",
+          "section": "fyi",
+          "capability": "tracking",
+          "citations": [
+            {
+              "source": "linear",
+              "account_id": "linear",
+              "account_label": "Linear",
+              "workspace": "GRW",
+              "source_ref": "linear:GRW-240"
+            }
+          ],
+          "evidence": "GRW-240 description edited 02:10.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "tracking:GRW-240:update"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-crit",
+      "title": "Design crit",
+      "all_day": false,
+      "start": "2026-08-07T15:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 45,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:crit"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:design-crit:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

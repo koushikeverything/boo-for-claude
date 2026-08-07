@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Priya",
+  "role": "product_designer",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "figma",
+      "account_label": "Figma",
+      "source": "figma",
+      "capability": "design",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-figma-review",
+      "title": "Review the checkout redesign — your feedback is requested",
+      "detail": "The eng team is blocked on final specs for the checkout flow.",
+      "section": "top_of_mind",
+      "capability": "design",
+      "citations": [
+        {
+          "source": "figma",
+          "account_id": "figma",
+          "account_label": "Figma",
+          "workspace": "Growth",
+          "source_ref": "figma:file-checkout/comment-12",
+          "link": "https://www.figma.com/file/CHK123/Checkout?node-id=0-1#comment-12"
+        }
+      ],
+      "evidence": "Figma comment: '@Priya can you approve the final specs so we can build?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open Figma file"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "design:checkout-redesign-review:2026-08-07",
+      "rank": 0
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "fyi-slack",
+          "title": "@mentioned in #growth about the empty-state copy",
+          "detail": "PM asked for your take on the empty-state wording.",
+          "section": "fyi",
+          "capability": "chat",
+          "citations": [
+            {
+              "source": "slack",
+              "account_id": "slack",
+              "account_label": "Slack",
+              "workspace": "#growth",
+              "source_ref": "slack:C1/22"
+            }
+          ],
+          "evidence": "PM: '@Priya thoughts on the empty-state copy?'",
+          "urgency": "soon",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "chat:empty-state-copy:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cal-design-review",
+      "title": "Design review",
+      "all_day": false,
+      "start": "2026-08-07T15:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 45,
+      "context": "Walk through the checkout redesign with eng.",
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:evt-design-review"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:design-review:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

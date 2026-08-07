@@ -1,0 +1,17 @@
+{
+  "sub-personal": [
+    {
+      "source": "drive",
+      "account_id": "sub-personal",
+      "source_ref": "drive:file-field-trip-form",
+      "name": "Leo field trip permission form.pdf",
+      "mime_type": "application/pdf",
+      "owner": "school@school.example",
+      "modified": "2026-08-05T09:00:00-07:00",
+      "link": "https://drive.google.com/file/d/file-field-trip-form/view"
+    }
+  ],
+  "sub-work": {
+    "__error__": "Drive not connected"
+  }
+}

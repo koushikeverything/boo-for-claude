@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-add-swim",
+      "title": "Add Leo's swim meet to your calendar",
+      "detail": "Sunday at **10:00 AM**. I'll show the event and ask before saving.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-swim-009" } ],
+      "evidence": "Coach email: 'Leo is confirmed for the meet this Sunday, warm-ups at 10:00 AM.'",
+      "when": { "datetime": "2026-08-10T10:00:00", "timezone": "America/Los_Angeles", "all_day": false },
+      "urgency": "soon",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [
+        { "type": "create_calendar_event", "label": "Add to Personal calendar", "requires_approval": true }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:leo-swim-meet:2026-08-10"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

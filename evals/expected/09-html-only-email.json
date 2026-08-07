@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [
+    {
+      "group": "Deliveries",
+      "items": [
+        {
+          "id": "fyi-parcel",
+          "title": "Standing desk arriving today",
+          "detail": "Out for delivery; signature required.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-html-shipping" } ],
+          "evidence": "Extracted from an HTML-only shipping email: 'Out for delivery — signature required.'",
+          "when": { "datetime": "2026-08-07", "timezone": "America/Los_Angeles", "all_day": true },
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "delivery:standing-desk:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

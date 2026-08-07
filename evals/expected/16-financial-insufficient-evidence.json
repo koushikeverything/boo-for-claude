@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [
+    {
+      "group": "Financial",
+      "items": [
+        {
+          "id": "fyi-maybe-payment",
+          "title": "A payment may be scheduled soon",
+          "detail": "An email hints at an upcoming charge, but the amount isn't stated — I won't guess it.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-vague-payment" } ],
+          "evidence": "Message: 'Your upcoming payment will process soon.' (no amount or date given)",
+          "urgency": "informational",
+          "confidence": "low",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "bill:unspecified-payment:approx"
+        }
+      ]
+    }
+  ],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "A financial email lacked a stated amount and date; I flagged it without inventing figures.", "category": "low_confidence" }
+  ]
+}

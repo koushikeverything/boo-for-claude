@@ -1,0 +1,67 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "microsoft_365", "account_label": "Microsoft 365", "source": "m365_calendar", "capability": "productivity", "status": "complete" },
+    { "account_id": "microsoft_365", "account_label": "Microsoft 365", "source": "m365_mail", "capability": "productivity", "status": "complete" },
+    { "account_id": "teams", "account_label": "Microsoft Teams", "source": "teams", "capability": "chat", "status": "complete" },
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-pr",
+      "title": "Review PR #514 — rate-limit middleware",
+      "detail": "Your review requested; 2 approvals needed.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [ { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api#514" } ],
+      "evidence": "PR #514 review requested from you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514"
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "fyi-teams",
+          "title": "You were @mentioned in the Platform Teams channel",
+          "detail": "A question about the deploy window.",
+          "section": "fyi",
+          "capability": "chat",
+          "citations": [ { "source": "teams", "account_id": "teams", "account_label": "Microsoft Teams", "workspace": "Platform", "source_ref": "teams:msg-1" } ],
+          "evidence": "@you: 'is the deploy window still 4pm?'",
+          "urgency": "soon",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "chat:teams-deploy-window:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cal-standup",
+      "title": "Standup",
+      "all_day": false,
+      "start": "2026-08-07T09:30:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 15,
+      "citations": [ { "source": "m365_calendar", "account_id": "microsoft_365", "account_label": "Microsoft 365", "source_ref": "m365:evt-1" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:standup:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

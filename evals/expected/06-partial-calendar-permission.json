@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "unavailable", "safe_reason": "calendar scope not granted" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-bill",
+      "title": "Pay the electric bill",
+      "detail": "**$92** due today.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-electric" } ],
+      "evidence": "Utility notice: balance $92.00 due Aug 7.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 3,
+      "conflict_state": "none",
+      "dedup_key": "bill:electric:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "Calendar access isn't granted, so today's schedule isn't included.", "category": "source_unavailable" }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Sam",
+  "role": "qa_engineer",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "github",
+      "account_label": "GitHub",
+      "source": "github",
+      "capability": "code",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-reopened",
+      "title": "3 bugs reopened, due today",
+      "detail": "All on the checkout flow; assigned to you.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "GRW",
+          "source_ref": "linear:GRW-bugs-reopened"
+        }
+      ],
+      "evidence": "3 Linear bugs moved back to 'todo', due 2026-08-07, assignee: you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "conflict_state": "none",
+      "dedup_key": "tracking:reopened-bugs:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "t-signoff",
+      "title": "PR #88 needs QA sign-off before merge",
+      "detail": "Author is waiting on your pass.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        {
+          "source": "github",
+          "account_id": "github",
+          "account_label": "GitHub",
+          "workspace": "acme/web",
+          "source_ref": "github:acme/web#88"
+        }
+      ],
+      "evidence": "PR #88 labeled 'needs-qa', review requested from you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-web-88-qa:2026-08-07",
+      "rank": 1
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Alerts",
+      "items": [
+        {
+          "id": "f-build",
+          "title": "Build 42 is ready to test",
+          "detail": "Staging deploy of the release candidate.",
+          "section": "fyi",
+          "capability": "code",
+          "citations": [
+            {
+              "source": "github",
+              "account_id": "github",
+              "account_label": "GitHub",
+              "workspace": "acme/web",
+              "source_ref": "github:acme/web/runs/build-42"
+            }
+          ],
+          "evidence": "RC build 42 deployed to staging 07:30.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "code:build-42-staging:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-readiness",
+      "title": "Release readiness review",
+      "all_day": false,
+      "start": "2026-08-07T13:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 30,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:readiness"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:release-readiness:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

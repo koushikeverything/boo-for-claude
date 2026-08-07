@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [
+    {
+      "group": "Deliveries",
+      "items": [
+        {
+          "id": "fyi-pkg",
+          "title": "Groceries arriving this evening",
+          "detail": "Delivery window 5–7 PM.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-grocery" } ],
+          "evidence": "Order confirmation: 'Your delivery window is 5:00–7:00 PM today.'",
+          "when": { "datetime": "2026-08-07T17:00:00", "timezone": "America/Los_Angeles", "all_day": false },
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "delivery:groceries:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "3 promotional 'deals' emails were hidden because your preferences exclude shopping deals.", "category": "excluded_by_preference" }
+  ]
+}

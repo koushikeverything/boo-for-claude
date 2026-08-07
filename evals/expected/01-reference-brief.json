@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" },
+    { "account_id": "sub-work", "account_label": "Work", "source": "drive", "status": "unavailable", "safe_reason": "reconnect needed" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-daycare",
+      "title": "Pay the daycare invoice",
+      "detail": "**$450** due today.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-daycare-001", "link": "https://mail.google.com/mail/u/0/#inbox/msg-daycare-001" }
+      ],
+      "evidence": "Little Sprouts Daycare: invoice #4471 for $450.00 is due by end of day Friday, Aug 7.",
+      "when": { "datetime": "2026-08-07", "timezone": "America/Los_Angeles", "all_day": true },
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [ { "type": "open_source", "label": "Open message" } ],
+      "conflict_state": "none",
+      "dedup_key": "bill:daycare-invoice:2026-08-07"
+    },
+    {
+      "id": "tom-sitter",
+      "title": "Book the sitter for Friday",
+      "detail": "You have a date night Friday and haven't confirmed a sitter.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-sitter-014" }
+      ],
+      "evidence": "Thread 'Friday??' with Sam: 'we still need someone to watch the kids Friday night'.",
+      "urgency": "today",
+      "confidence": "medium",
+      "effort_minutes": 15,
+      "actions": [ { "type": "say_command", "label": "Draft the sitter email", "say": "Draft the sitter email for Friday night." } ],
+      "conflict_state": "none",
+      "dedup_key": "task:book-sitter:2026-08-08"
+    },
+    {
+      "id": "tom-swim",
+      "title": "Add Leo's swim meet to your calendar",
+      "detail": "Swim meet is **Sunday at 10:00 AM**.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-swim-009" }
+      ],
+      "evidence": "Coach email: 'Leo is confirmed for the meet this Sunday, warm-ups at 10:00 AM.'",
+      "when": { "datetime": "2026-08-10T10:00:00", "timezone": "America/Los_Angeles", "all_day": false },
+      "urgency": "soon",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [ { "type": "say_command", "label": "Add to my calendar", "say": "Add Leo's swim meet to my personal calendar." } ],
+      "conflict_state": "none",
+      "dedup_key": "event:leo-swim-meet:2026-08-10"
+    },
+    {
+      "id": "tom-field",
+      "title": "Sign Leo's field-trip form",
+      "detail": "Due **tomorrow**.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-field-003", "link": "https://mail.google.com/mail/u/0/#inbox/msg-field-003" }
+      ],
+      "evidence": "School office: 'Please return Leo's signed field-trip permission form by Saturday, Aug 8.'",
+      "when": { "datetime": "2026-08-08", "timezone": "America/Los_Angeles", "all_day": true },
+      "urgency": "soon",
+      "confidence": "high",
+      "effort_minutes": 10,
+      "actions": [ { "type": "open_source", "label": "Open form" } ],
+      "conflict_state": "none",
+      "dedup_key": "doc:leo-field-trip-form:2026-08-08"
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Financial",
+      "items": [
+        {
+          "id": "fyi-rent",
+          "title": "Rent payment scheduled",
+          "detail": "**$1,500** is scheduled for tomorrow.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-rent-021" } ],
+          "evidence": "Bank alert: 'Your scheduled payment of $1,500.00 to Skyline Property Mgmt will process Aug 8.'",
+          "when": { "datetime": "2026-08-08", "timezone": "America/Los_Angeles", "all_day": true },
+          "urgency": "upcoming",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "bill:rent:2026-08-08"
+        },
+        {
+          "id": "fyi-auto",
+          "title": "Auto loan scheduled",
+          "detail": "**$550** is scheduled for Friday.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-auto-018" } ],
+          "evidence": "Bank alert: 'Auto loan autopay of $550.00 scheduled for Aug 8.'",
+          "when": { "datetime": "2026-08-08", "timezone": "America/Los_Angeles", "all_day": true },
+          "urgency": "upcoming",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "bill:auto-loan:2026-08-08"
+        }
+      ]
+    },
+    {
+      "group": "RSVP needed",
+      "items": [
+        {
+          "id": "fyi-maya",
+          "title": "Maya's birthday party",
+          "detail": "Saturday at **1:00 PM** at the park.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-maya-030", "link": "https://mail.google.com/mail/u/0/#inbox/msg-maya-030" } ],
+          "evidence": "Evite: 'Maya turns 6! Saturday Aug 8, 1:00 PM, Dolores Park. Please RSVP.'",
+          "when": { "datetime": "2026-08-08T13:00:00", "timezone": "America/Los_Angeles", "all_day": false },
+          "urgency": "soon",
+          "confidence": "high",
+          "effort_minutes": null,
+          "actions": [ { "type": "open_source", "label": "Open invitation" } ],
+          "conflict_state": "none",
+          "dedup_key": "event:maya-birthday:2026-08-08"
+        }
+      ]
+    },
+    {
+      "group": "Deliveries",
+      "items": [
+        {
+          "id": "fyi-boots",
+          "title": "Kids' rain boots",
+          "detail": "Scheduled for delivery **today**.",
+          "section": "fyi",
+          "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-boots-042" } ],
+          "evidence": "Carrier: 'Your package (rain boots) is out for delivery, expected today.'",
+          "when": { "datetime": "2026-08-07", "timezone": "America/Los_Angeles", "all_day": true },
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "delivery:rain-boots:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cal-house",
+      "title": "Private house viewing",
+      "all_day": false,
+      "start": "2026-08-07T13:00:00",
+      "end": "2026-08-07T13:30:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 30,
+      "location": "300 77th St, San Francisco",
+      "context": "Your second visit; the earlier thread mentions checking the backyard.",
+      "citations": [
+        { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-house-77th", "link": "https://calendar.google.com/event?eid=evt-house-77th" },
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-house-051" }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:house-viewing-77th:2026-08-07"
+    },
+    {
+      "id": "cal-mom",
+      "title": "Phone call with Mom",
+      "all_day": false,
+      "start": "2026-08-07T15:30:00",
+      "end": "2026-08-07T15:45:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 15,
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-mom-call" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:mom-call:2026-08-07"
+    },
+    {
+      "id": "cal-vacation",
+      "title": "Vacation planning decisions",
+      "all_day": false,
+      "start": "2026-08-07T18:00:00",
+      "end": "2026-08-07T18:30:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 30,
+      "context": "Goal from the supporting thread: finalize the destination.",
+      "citations": [
+        { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-vacation-plan" },
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-vacation-060" }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:vacation-planning:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "Shopping/promotional deals hidden per your preferences.", "category": "excluded_by_preference" },
+    { "reason": "Work Drive was not reachable this run (reconnect needed); any Work Drive items are not reflected.", "category": "source_unavailable" }
+  ]
+}

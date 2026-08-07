@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Jordan",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-work", "account_label": "Work", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-draft-reply",
+      "title": "Reply to Maya about the venue",
+      "detail": "She needs an answer today. Two accounts can send — I'll ask which to draft from.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-maya-venue" } ],
+      "evidence": "Maya: 'Can you confirm the venue by end of day?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [
+        { "type": "draft_email", "label": "Draft a reply (choose account)", "requires_approval": true },
+        { "type": "say_command", "label": "Draft from Personal", "say": "Draft the reply to Maya from my Personal account." }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "task:reply-maya-venue:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

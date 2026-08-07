@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "drive", "status": "unavailable", "safe_reason": "Drive not connected" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-contract",
+      "title": "Review the contract mentioned in Dana's email",
+      "detail": "Dana asked you to review the attached document; I can't open Drive to summarize it.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-contract" } ],
+      "evidence": "Dana: 'Can you review the contract in the shared Drive before our 2pm?'",
+      "urgency": "today",
+      "confidence": "medium",
+      "effort_minutes": 20,
+      "actions": [ { "type": "open_source", "label": "Open message" } ],
+      "conflict_state": "none",
+      "dedup_key": "task:review-contract:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "Drive isn't connected, so I couldn't read the referenced document's contents.", "category": "source_unavailable" }
+  ]
+}

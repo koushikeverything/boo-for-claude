@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boo-for-claude.local/schemas/preferences.schema.json",
+  "title": "Boo for Claude — user preferences",
+  "description": "Small, human-readable, user-owned preference document. The user can read and edit it directly. Boo echoes any change before applying it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "preferred_name", "timezone", "brief_time", "accounts"],
+  "properties": {
+    "version": { "const": "1.0" },
+    "preferred_name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "timezone": { "type": "string", "description": "IANA timezone, e.g. America/Los_Angeles.", "minLength": 3 },
+    "brief_time": { "type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$", "description": "Local HH:MM the user wants the brief. The actual schedule lives in the Cowork task; keep them in sync." },
+    "weekend_behavior": { "enum": ["same", "skip", "lighter"], "default": "same" },
+    "verbosity": { "enum": ["short", "normal", "detailed"], "default": "short" },
+    "show_deals": { "type": "boolean", "default": false },
+    "included_fyi_categories": {
+      "type": "array",
+      "items": { "enum": ["financial", "rsvp", "deliveries", "deals", "updates"] }
+    },
+    "excluded_fyi_categories": {
+      "type": "array",
+      "items": { "enum": ["financial", "rsvp", "deliveries", "deals", "updates"] }
+    },
+    "important_people": { "type": "array", "items": { "type": "string" } },
+    "important_topics": { "type": "array", "items": { "type": "string" } },
+    "urgency_rules": {
+      "type": "array",
+      "description": "Explicit user rules, e.g. 'anything from the school is top of mind'.",
+      "items": { "type": "string" }
+    },
+    "default_calendar_account": { "type": ["string", "null"], "description": "account_id for calendar writes." },
+    "default_drafting_account": { "type": ["string", "null"], "description": "account_id for Gmail drafts." },
+    "accounts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["account_id", "label", "status"],
+        "properties": {
+          "account_id": { "type": "string", "minLength": 1, "description": "Stable non-secret id (Google sub in Mode B)." },
+          "label": { "type": "string", "minLength": 1, "description": "Personal / Work / Family / School …" },
+          "email_hint": { "type": "string", "description": "Optional, for the user's recognition only." },
+          "status": { "enum": ["active", "paused", "reconnect_needed", "removed"] },
+          "granted_capabilities": {
+            "type": "array",
+            "items": { "enum": ["gmail", "calendar", "drive"] }
+          }
+        }
+      }
+    }
+  }
+}

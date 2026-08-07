@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Jordan",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" },
+    { "account_id": "sub-family", "account_label": "Family", "source": "gmail", "status": "unavailable", "safe_reason": "account removed by user" },
+    { "account_id": "sub-family", "account_label": "Family", "source": "calendar", "status": "unavailable", "safe_reason": "account removed by user" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-standby",
+      "title": "Confirm the plumber for this afternoon",
+      "detail": "They asked you to reply with a time.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-plumber" } ],
+      "evidence": "Plumber: 'Reply with a preferred window and we'll confirm.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 3,
+      "actions": [ { "type": "open_source", "label": "Open message" } ],
+      "conflict_state": "none",
+      "dedup_key": "task:confirm-plumber:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [
+    {
+      "id": "cal-lunch",
+      "title": "Lunch with Sam",
+      "all_day": false,
+      "start": "2026-08-07T12:00:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 60,
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-lunch" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:lunch-sam:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "The Family account was removed, so it wasn't consulted; Personal was unaffected.", "category": "source_unavailable" }
+  ]
+}

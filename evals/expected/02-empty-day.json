@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-08T13:00:00-07:00",
+  "local_date": "2026-08-08",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [
+    {
+      "group": "Deliveries",
+      "items": [
+        {
+          "id": "fyi-dup-delivery",
+          "title": "Rain boots arriving today",
+          "detail": "Out for delivery (two carrier notifications collapsed into one).",
+          "section": "fyi",
+          "citations": [
+            { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-carrier-a" },
+            { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-carrier-b" }
+          ],
+          "evidence": "Two separate 'out for delivery' emails for the same tracking number 1Z-RAINBOOTS.",
+          "when": { "datetime": "2026-08-07", "timezone": "America/Los_Angeles", "all_day": true },
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "delivery:1z-rainboots:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

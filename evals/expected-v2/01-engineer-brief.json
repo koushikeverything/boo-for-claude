@@ -1,0 +1,297 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "gmail",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "github",
+      "account_label": "GitHub",
+      "source": "github",
+      "capability": "code",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "sentry",
+      "account_label": "Sentry",
+      "source": "sentry",
+      "capability": "observability",
+      "status": "complete"
+    },
+    {
+      "account_id": "pagerduty",
+      "account_label": "PagerDuty",
+      "source": "pagerduty",
+      "capability": "incidents",
+      "status": "unavailable",
+      "safe_reason": "not connected"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-pr-review",
+      "title": "Review PR #514 \u2014 rate-limit middleware",
+      "detail": "Requested **your** review 14h ago; 2 approvals still needed.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        {
+          "source": "github",
+          "account_id": "github",
+          "account_label": "GitHub",
+          "workspace": "acme/api",
+          "source_ref": "github:acme/api#514",
+          "link": "https://github.com/acme/api/pull/514"
+        }
+      ],
+      "evidence": "PR #514 'add rate-limit middleware' \u2014 review requested from you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open PR"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514:review",
+      "rank": 0
+    },
+    {
+      "id": "tom-ci-fail",
+      "title": "CI failing on your branch feat/checkout-v2",
+      "detail": "The e2e job failed on the latest push.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        {
+          "source": "github",
+          "account_id": "github",
+          "account_label": "GitHub",
+          "workspace": "acme/api",
+          "source_ref": "github:acme/api/runs/9981",
+          "link": "https://github.com/acme/api/actions/runs/9981"
+        }
+      ],
+      "evidence": "Workflow 'e2e' concluded failure on feat/checkout-v2 @ commit a1b2c3.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open the failing run"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "code:ci-fail-checkout-v2:2026-08-07",
+      "rank": 1
+    },
+    {
+      "id": "tom-slack-reply",
+      "title": "Reply to Dana's handoff question in #growth",
+      "detail": "She's blocked on the API contract for the checkout flow.",
+      "section": "top_of_mind",
+      "capability": "chat",
+      "citations": [
+        {
+          "source": "slack",
+          "account_id": "slack",
+          "account_label": "Slack",
+          "workspace": "#growth",
+          "source_ref": "slack:C123/p170..."
+        }
+      ],
+      "evidence": "Dana: 'can you confirm the response shape for /checkout before I wire the UI?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [
+        {
+          "type": "say_command",
+          "label": "Draft a reply",
+          "say": "Draft a reply to Dana in #growth confirming the /checkout response shape."
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "chat:dana-checkout-contract:2026-08-07",
+      "rank": 2
+    },
+    {
+      "id": "tom-linear-due",
+      "title": "GRW-231 'Instrument checkout funnel' is due today",
+      "detail": "Assigned to you, in progress, due EOD.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "GRW",
+          "source_ref": "linear:GRW-231",
+          "link": "https://linear.app/acme/issue/GRW-231"
+        }
+      ],
+      "evidence": "Linear issue GRW-231, assignee: you, due 2026-08-07.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 30,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open issue"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "tracking:GRW-231:2026-08-07",
+      "rank": 3
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Alerts",
+      "items": [
+        {
+          "id": "fyi-sentry",
+          "title": "Checkout error rate up 3\u00d7 (last 2h)",
+          "detail": "Spike in `TypeError` on /checkout since the 06:10 deploy.",
+          "section": "fyi",
+          "capability": "observability",
+          "citations": [
+            {
+              "source": "sentry",
+              "account_id": "sentry",
+              "account_label": "Sentry",
+              "workspace": "acme-web",
+              "source_ref": "sentry:acme-web/issue-4471",
+              "link": "https://acme.sentry.io/issues/4471"
+            }
+          ],
+          "evidence": "Sentry issue 4471: events up 3\u00d7 vs 24h baseline, first seen 06:12.",
+          "when": {
+            "datetime": "2026-08-07T06:12:00+05:30",
+            "timezone": "Asia/Kolkata",
+            "all_day": false
+          },
+          "urgency": "soon",
+          "confidence": "medium",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "obs:checkout-typeerror-spike:2026-08-07"
+        }
+      ]
+    },
+    {
+      "group": "Deploys",
+      "items": [
+        {
+          "id": "fyi-deploy",
+          "title": "PR #509 merged and deployed to staging",
+          "detail": "Your feature flag change is live on staging.",
+          "section": "fyi",
+          "capability": "code",
+          "citations": [
+            {
+              "source": "github",
+              "account_id": "github",
+              "account_label": "GitHub",
+              "workspace": "acme/api",
+              "source_ref": "github:acme/api#509"
+            }
+          ],
+          "evidence": "PR #509 merged 07:40, staging deploy succeeded.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "code:pr-509-deploy-staging:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cal-standup",
+      "title": "Growth standup",
+      "all_day": false,
+      "start": "2026-08-07T09:30:00+05:30",
+      "end": "2026-08-07T09:45:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 15,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:evt-standup-2026-08-07"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:growth-standup:2026-08-07"
+    },
+    {
+      "id": "cal-sprint",
+      "title": "Sprint planning",
+      "all_day": false,
+      "start": "2026-08-07T14:00:00+05:30",
+      "end": "2026-08-07T15:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 60,
+      "context": "Carry over GRW-231 if the funnel work isn't done.",
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:evt-sprint-plan"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:sprint-planning:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    {
+      "reason": "PagerDuty isn't connected, so on-call/incident status isn't included.",
+      "category": "source_unavailable"
+    },
+    {
+      "reason": "Routine bot/notification noise in Slack and email was filtered out.",
+      "category": "over_limit"
+    }
+  ]
+}

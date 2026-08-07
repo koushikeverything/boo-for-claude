@@ -1,0 +1,20 @@
+{
+  "note": "Seed data used by connector tests to populate the store. Refresh tokens here are fake placeholders for fixtures only; real tokens arrive via the OAuth flow and are encrypted at rest.",
+  "user_id": "user-elisa",
+  "accounts": [
+    {
+      "account_id": "sub-personal",
+      "label": "Personal",
+      "email_verified": "elisa@gmail.example",
+      "scopes": ["gmail.readonly", "gmail.compose", "calendar.events", "drive.metadata.readonly"],
+      "fake_refresh_token": "FAKE-REFRESH-personal-000"
+    },
+    {
+      "account_id": "sub-work",
+      "label": "Work",
+      "email_verified": "elisa@acme.example",
+      "scopes": ["gmail.readonly", "calendar.events", "drive.metadata.readonly"],
+      "fake_refresh_token": "FAKE-REFRESH-work-000"
+    }
+  ]
+}

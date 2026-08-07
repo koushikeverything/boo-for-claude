@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "google", "account_label": "Google Workspace", "source": "calendar", "capability": "productivity", "status": "complete" },
+    { "account_id": "slack", "account_label": "Slack", "source": "slack", "capability": "chat", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-slack",
+      "title": "Reply to Dana's handoff question in #growth",
+      "detail": "She's blocked on the checkout API contract.",
+      "section": "top_of_mind",
+      "capability": "chat",
+      "citations": [ { "source": "slack", "account_id": "slack", "account_label": "Slack", "workspace": "#growth", "source_ref": "slack:C1/1" } ],
+      "evidence": "Dana: 'can you confirm the /checkout response shape?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "conflict_state": "none",
+      "dedup_key": "chat:dana-checkout:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "GitHub (code) isn't connected — your engineering brief is missing PRs and CI. Connect it to complete the brief.", "category": "mandatory_slot_missing" }
+  ]
+}

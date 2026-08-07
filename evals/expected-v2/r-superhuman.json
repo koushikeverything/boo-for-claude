@@ -1,0 +1,317 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Alex",
+  "role": "superhuman",
+  "team": "Founders",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "gmail",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "github",
+      "account_label": "GitHub",
+      "source": "github",
+      "capability": "code",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "intercom",
+      "account_label": "Intercom",
+      "source": "intercom",
+      "capability": "support",
+      "status": "complete"
+    },
+    {
+      "account_id": "figma",
+      "account_label": "Figma",
+      "source": "figma",
+      "capability": "design",
+      "status": "complete"
+    },
+    {
+      "account_id": "notion",
+      "account_label": "Notion",
+      "source": "notion",
+      "capability": "docs",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "sh-escalation",
+      "title": "Customer escalation: two enterprise trials hit the checkout bug",
+      "detail": "Both flagged **churn risk** overnight.",
+      "section": "top_of_mind",
+      "capability": "support",
+      "citations": [
+        {
+          "source": "intercom",
+          "account_id": "intercom",
+          "account_label": "Intercom",
+          "source_ref": "intercom:conv-1201"
+        }
+      ],
+      "evidence": "Two Intercom conversations from enterprise trials report checkout failures and mention cancelling.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "actions": [
+        {
+          "type": "say_command",
+          "label": "Open in Intercom",
+          "say": "Show the two enterprise-trial escalations in Intercom."
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "support:trial-checkout-escalation:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "sh-decision",
+      "title": "Decision needed: pricing-page scope",
+      "detail": "Blocks **Thursday's launch**; the team is waiting on your call.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "LAUNCH",
+          "source_ref": "linear:LAUNCH-12",
+          "link": "https://linear.app/acme/issue/LAUNCH-12"
+        }
+      ],
+      "evidence": "LAUNCH-12 in 'blocked': awaiting scope decision from you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 10,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open issue"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "tracking:LAUNCH-12-scope:2026-08-07",
+      "rank": 1
+    },
+    {
+      "id": "sh-pr",
+      "title": "Review PR #514 — rate-limit middleware",
+      "detail": "Your review is blocking the release.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        {
+          "source": "github",
+          "account_id": "github",
+          "account_label": "GitHub",
+          "workspace": "acme/api",
+          "source_ref": "github:acme/api#514",
+          "link": "https://github.com/acme/api/pull/514"
+        }
+      ],
+      "evidence": "PR #514 'add rate-limit middleware' — review requested from you; blocks the release branch.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "actions": [
+        {
+          "type": "open_source",
+          "label": "Open PR"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514:review",
+      "rank": 2
+    },
+    {
+      "id": "sh-design",
+      "title": "Approve the onboarding redesign specs",
+      "detail": "Design is blocked on your sign-off.",
+      "section": "top_of_mind",
+      "capability": "design",
+      "citations": [
+        {
+          "source": "figma",
+          "account_id": "figma",
+          "account_label": "Figma",
+          "workspace": "Product",
+          "source_ref": "figma:onboarding/comment-4"
+        }
+      ],
+      "evidence": "Figma comment: '@Alex approve the onboarding specs so we can build.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "actions": [
+        {
+          "type": "say_command",
+          "label": "Open Figma file",
+          "say": "Open the onboarding redesign specs in Figma."
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "design:onboarding-specs:2026-08-07",
+      "rank": 3
+    },
+    {
+      "id": "sh-investor",
+      "title": "Investor follow-up: reply with the updated deck",
+      "detail": "You promised the partner a reply **today**.",
+      "section": "top_of_mind",
+      "capability": "productivity",
+      "citations": [
+        {
+          "source": "gmail",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "gmail:msg-investor-77"
+        }
+      ],
+      "evidence": "Thread with the partner: 'send the updated deck by end of day and we'll circulate internally.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "actions": [
+        {
+          "type": "say_command",
+          "label": "Draft reply",
+          "say": "Draft a reply to the investor attaching the latest deck."
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "productivity:investor-deck-followup:2026-08-07",
+      "rank": 4
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "sh-board",
+          "title": "Board-deck doc edited overnight",
+          "detail": "Your co-founder updated the metrics slide.",
+          "section": "fyi",
+          "capability": "docs",
+          "citations": [
+            {
+              "source": "notion",
+              "account_id": "notion",
+              "account_label": "Notion",
+              "source_ref": "notion:page-board-deck"
+            }
+          ],
+          "evidence": "Notion page 'Board deck Q3' edited 02:40 by co-founder.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "docs:board-deck-edit:2026-08-07"
+        }
+      ]
+    },
+    {
+      "group": "Deploys",
+      "items": [
+        {
+          "id": "sh-release",
+          "title": "Release 2.14 shipped to production",
+          "detail": "Includes the rate-limit change.",
+          "section": "fyi",
+          "capability": "code",
+          "citations": [
+            {
+              "source": "github",
+              "account_id": "github",
+              "account_label": "GitHub",
+              "workspace": "acme/api",
+              "source_ref": "github:acme/api/releases/2.14"
+            }
+          ],
+          "evidence": "Release 2.14 published 06:40.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "deploy:acme-api-2.14"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "sh-investor-call",
+      "title": "Investor call",
+      "all_day": false,
+      "start": "2026-08-07T10:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 30,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:investor-call"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:investor-call:2026-08-07"
+    },
+    {
+      "id": "sh-allhands",
+      "title": "All-hands",
+      "all_day": false,
+      "start": "2026-08-07T14:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 30,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:all-hands"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:all-hands:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    {
+      "reason": "Product analytics (Amplitude/Mixpanel/PostHog) has no connector yet, so growth-metric movement isn't included.",
+      "category": "source_unavailable"
+    }
+  ]
+}

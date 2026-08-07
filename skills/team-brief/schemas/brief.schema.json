@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boo-for-claude.local/schemas/brief.schema.json",
+  "title": "Boo for Claude — Role/Team Brief (v2)",
+  "description": "Generalized brief contract for role-based team briefs across many source systems. A STRUCTURAL SUPERSET of daily-brief.schema.json v1: same field names and semantic rules (so validate_brief.py is unchanged), with a widened `source` enum and added `role`/`team`/`capability`/`workspace`. Presentation remains a pure function of the validated payload.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "local_date",
+    "timezone",
+    "preferred_name",
+    "source_status",
+    "top_of_mind",
+    "fyi_groups",
+    "calendar",
+    "conflicts",
+    "omissions"
+  ],
+  "properties": {
+    "schema_version": { "const": "2.0" },
+    "generated_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}([.]\\d+)?(Z|[+-]\\d{2}:\\d{2})$" },
+    "local_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "timezone": { "type": "string", "minLength": 3 },
+    "preferred_name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "role": { "$ref": "#/$defs/role" },
+    "team": { "type": "string", "maxLength": 100 },
+    "source_status": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source_status_entry" } },
+    "top_of_mind": { "type": "array", "items": { "$ref": "#/$defs/item" } },
+    "fyi_groups": { "type": "array", "items": { "$ref": "#/$defs/fyi_group" } },
+    "calendar": { "type": "array", "items": { "$ref": "#/$defs/calendar_event" } },
+    "conflicts": { "type": "array", "items": { "$ref": "#/$defs/conflict" } },
+    "omissions": { "type": "array", "items": { "$ref": "#/$defs/omission" } }
+  },
+  "$defs": {
+    "role": {
+      "enum": [
+        "product_designer", "design_lead", "software_engineer", "engineering_lead",
+        "product_manager", "head_of_product", "qa_engineer", "data_analyst", "superhuman"
+      ]
+    },
+    "capability": {
+      "enum": ["productivity", "chat", "design", "code", "tracking", "docs", "incidents", "observability", "support", "analytics"]
+    },
+    "source_type": {
+      "comment": "v1 values (gmail/calendar/drive) retained so v1-shaped payloads validate; widened for org sources.",
+      "enum": [
+        "gmail", "calendar", "drive",
+        "m365_mail", "m365_calendar", "m365_files", "teams",
+        "slack", "github", "gitlab", "bitbucket",
+        "jira", "confluence", "linear", "asana",
+        "notion", "pagerduty", "opsgenie", "datadog", "sentry", "grafana",
+        "figma", "intercom", "zendesk",
+        "clickup", "amplitude", "mixpanel", "posthog"
+      ]
+    },
+    "urgency": { "enum": ["today", "soon", "upcoming", "informational"] },
+    "confidence": { "enum": ["high", "medium", "low"] },
+    "source_status_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["account_id", "account_label", "source", "status"],
+      "properties": {
+        "account_id": { "type": "string", "minLength": 1, "description": "Stable, non-secret source-connection id (e.g. 'github', 'google:personal', 'slack:acme')." },
+        "account_label": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "#/$defs/source_type" },
+        "capability": { "$ref": "#/$defs/capability" },
+        "workspace": { "type": "string", "description": "Optional scope label (repo, project, channel, Figma team)." },
+        "status": { "enum": ["complete", "partial", "unavailable"] },
+        "safe_reason": { "type": "string" }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "account_id", "account_label"],
+      "properties": {
+        "source": { "$ref": "#/$defs/source_type" },
+        "account_id": { "type": "string", "minLength": 1 },
+        "account_label": { "type": "string", "minLength": 1 },
+        "capability": { "$ref": "#/$defs/capability" },
+        "workspace": { "type": "string" },
+        "source_ref": { "type": "string" },
+        "link": { "type": "string" }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "label"],
+      "properties": {
+        "type": { "enum": ["open_source", "say_command", "draft_email", "draft_reply", "create_calendar_event", "update_calendar_event", "comment", "rsvp", "none"] },
+        "label": { "type": "string", "minLength": 1 },
+        "say": { "type": "string" },
+        "requires_approval": { "type": "boolean" }
+      },
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "say_command" } } }, "then": { "required": ["say"] } },
+        {
+          "if": { "properties": { "type": { "enum": ["draft_email", "draft_reply", "create_calendar_event", "update_calendar_event", "comment", "rsvp"] } } },
+          "then": { "properties": { "requires_approval": { "const": true } }, "required": ["requires_approval"] }
+        }
+      ]
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "detail", "section", "citations", "urgency", "confidence", "dedup_key", "conflict_state"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "detail": { "type": "string", "maxLength": 400 },
+        "section": { "enum": ["top_of_mind", "fyi", "calendar"] },
+        "capability": { "$ref": "#/$defs/capability" },
+        "citations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/citation" } },
+        "evidence": { "type": "string" },
+        "when": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": { "datetime": { "type": "string" }, "timezone": { "type": "string" }, "all_day": { "type": "boolean" } }
+        },
+        "urgency": { "$ref": "#/$defs/urgency" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "effort_minutes": { "type": ["integer", "null"], "minimum": 1, "maximum": 480 },
+        "rank": { "type": "integer", "minimum": 0, "description": "Explicit role-ranking order for top_of_mind (ascending). When present on all top_of_mind items, the validator checks this order instead of the default urgency/effort rule." },
+        "actions": { "type": "array", "items": { "$ref": "#/$defs/action" } },
+        "conflict_state": { "enum": ["none", "conflicted"] },
+        "dedup_key": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        { "if": { "properties": { "confidence": { "const": "low" } } }, "then": { "properties": { "urgency": { "enum": ["upcoming", "informational"] } } } }
+      ]
+    },
+    "fyi_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["group", "items"],
+      "properties": { "group": { "type": "string", "minLength": 1 }, "items": { "type": "array", "items": { "$ref": "#/$defs/item" } } }
+    },
+    "calendar_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "citations", "all_day", "dedup_key"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "all_day": { "type": "boolean" },
+        "start": { "type": "string" },
+        "end": { "type": "string" },
+        "timezone": { "type": "string" },
+        "duration_minutes": { "type": ["integer", "null"], "minimum": 0 },
+        "location": { "type": "string" },
+        "attendees": { "type": "array", "items": { "type": "string" } },
+        "context": { "type": "string", "maxLength": 400 },
+        "citations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/citation" } },
+        "conflict_state": { "enum": ["none", "conflicted"] },
+        "dedup_key": { "type": "string", "minLength": 1 }
+      }
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "citations"],
+      "properties": { "description": { "type": "string", "minLength": 1 }, "citations": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/citation" } } }
+    },
+    "omission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason"],
+      "properties": { "reason": { "type": "string", "minLength": 1 }, "category": { "enum": ["source_unavailable", "excluded_by_preference", "low_confidence", "out_of_window", "over_limit", "mandatory_slot_missing"] } }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T06:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" }
+  ],
+  "top_of_mind": [],
+  "fyi_groups": [],
+  "calendar": [
+    {
+      "id": "cal-ooo",
+      "title": "Dana out of office",
+      "all_day": true,
+      "timezone": "America/Los_Angeles",
+      "context": "Shared-calendar all-day event.",
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-ooo" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:dana-ooo:2026-08-07"
+    },
+    {
+      "id": "cal-standup",
+      "title": "Daily standup (recurring)",
+      "all_day": false,
+      "start": "2026-08-07T09:30:00",
+      "end": "2026-08-07T09:45:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 15,
+      "context": "Recurring weekday event; today's instance only.",
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-standup-2026-08-07" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:daily-standup:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}

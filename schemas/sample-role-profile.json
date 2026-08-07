@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "user": "koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "timezone": "Asia/Kolkata",
+  "brief_time": "08:00",
+  "weekend_behavior": "lighter",
+  "verbosity": "short",
+  "connections": [
+    { "capability": "productivity", "provider": "google_workspace", "scope": {}, "status": "active" },
+    { "capability": "chat", "provider": "slack", "scope": { "channels": ["#growth", "#eng"] }, "status": "active" },
+    { "capability": "code", "provider": "github", "scope": { "repos": ["acme/api", "acme/web"] }, "status": "active" },
+    { "capability": "tracking", "provider": "linear", "scope": { "teams": ["GRW"] }, "status": "active" },
+    { "capability": "observability", "provider": "sentry", "scope": { "projects": ["acme-web"] }, "status": "active" },
+    { "capability": "incidents", "provider": "pagerduty", "scope": {}, "status": "reconnect_needed" }
+  ],
+  "preferences": {
+    "quiet_categories": ["promotions", "bot-noise"],
+    "important_people": ["Dana"],
+    "important_projects": ["Zero to One"],
+    "show_deals": false
+  }
+}

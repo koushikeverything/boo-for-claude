@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Elisa",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-thread",
+      "title": "Send Priya the updated address",
+      "detail": "Latest message in a long thread asks only for your new address.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-thread-latest" } ],
+      "evidence": "Newest reply: 'Everything else is sorted — just send me your new address and I'll ship it.' (earlier quoted text ignored)",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 2,
+      "actions": [ { "type": "say_command", "label": "Draft a reply", "say": "Draft a reply to Priya with my new address." } ],
+      "conflict_state": "none",
+      "dedup_key": "task:reply-priya-address:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

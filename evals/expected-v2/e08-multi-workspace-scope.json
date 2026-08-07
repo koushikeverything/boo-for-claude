@@ -1,0 +1,46 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-pr-api",
+      "title": "Review PR #514 in acme/api",
+      "detail": "Your review requested.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [ { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api#514" } ],
+      "evidence": "PR #514 review requested.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 10,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-api-514"
+    },
+    {
+      "id": "tom-pr-web",
+      "title": "Review PR #77 in acme/web",
+      "detail": "Your review requested.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [ { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/web", "source_ref": "github:acme/web#77" } ],
+      "evidence": "PR #77 review requested.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "conflict_state": "none",
+      "dedup_key": "code:pr-acme-web-77"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Maya",
+  "role": "product_manager",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "intercom",
+      "account_label": "Intercom",
+      "source": "intercom",
+      "capability": "support",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-decision",
+      "title": "Decision needed: checkout scope",
+      "detail": "A story is blocked on your call.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "GRW",
+          "source_ref": "linear:GRW-231"
+        }
+      ],
+      "evidence": "GRW-231 in 'blocked': awaiting scope decision from PM.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 10,
+      "conflict_state": "none",
+      "dedup_key": "tracking:GRW-231-decision:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "t-escalation",
+      "title": "Customer escalation: checkout errors",
+      "detail": "3 tickets in the last hour.",
+      "section": "top_of_mind",
+      "capability": "support",
+      "citations": [
+        {
+          "source": "intercom",
+          "account_id": "intercom",
+          "account_label": "Intercom",
+          "source_ref": "intercom:conv-771"
+        }
+      ],
+      "evidence": "3 Intercom conversations report checkout failures since 07:00.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "support:checkout-escalation:2026-08-07",
+      "rank": 1
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "f-note",
+          "title": "Async standup update requested in #growth",
+          "detail": "EM asked for your status by 11am.",
+          "section": "fyi",
+          "capability": "chat",
+          "citations": [
+            {
+              "source": "slack",
+              "account_id": "slack",
+              "account_label": "Slack",
+              "workspace": "#growth",
+              "source_ref": "slack:C1/40"
+            }
+          ],
+          "evidence": "EM: '@Maya drop your async update by 11.'",
+          "urgency": "soon",
+          "confidence": "high",
+          "effort_minutes": 5,
+          "conflict_state": "none",
+          "dedup_key": "chat:async-standup:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-roadmap",
+      "title": "Roadmap review",
+      "all_day": false,
+      "start": "2026-08-07T16:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 45,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:roadmap"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:roadmap-review:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    {
+      "reason": "Product analytics (Amplitude/Mixpanel) has no connector yet, so metric trends aren't included.",
+      "category": "source_unavailable"
+    }
+  ]
+}

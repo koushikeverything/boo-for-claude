@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Riya",
+  "role": "data_analyst",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "notion",
+      "account_label": "Notion",
+      "source": "notion",
+      "capability": "docs",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-request",
+      "title": "Data request DA-14 due today (exec dashboard)",
+      "detail": "Leadership needs the activation cut by EOD.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "DATA",
+          "source_ref": "linear:DA-14"
+        }
+      ],
+      "evidence": "DA-14 assigned to you, due 2026-08-07: 'activation by cohort for the exec dashboard.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 30,
+      "conflict_state": "none",
+      "dedup_key": "tracking:DA-14:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "t-question",
+      "title": "Answer the funnel-numbers question in #growth",
+      "detail": "PM is waiting on your read of the drop-off.",
+      "section": "top_of_mind",
+      "capability": "chat",
+      "citations": [
+        {
+          "source": "slack",
+          "account_id": "slack",
+          "account_label": "Slack",
+          "workspace": "#growth",
+          "source_ref": "slack:C1/61"
+        }
+      ],
+      "evidence": "PM: '@Riya why did checkout drop-off jump?'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "conflict_state": "none",
+      "dedup_key": "chat:funnel-question:2026-08-07",
+      "rank": 1
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "f-doc",
+          "title": "The activation dashboard doc was updated",
+          "detail": "New definition of 'activated' merged in Notion.",
+          "section": "fyi",
+          "capability": "docs",
+          "citations": [
+            {
+              "source": "notion",
+              "account_id": "notion",
+              "account_label": "Notion",
+              "source_ref": "notion:page-activation"
+            }
+          ],
+          "evidence": "Notion page 'Activation metric' edited 06:20.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "docs:activation-def:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-metrics",
+      "title": "Weekly metrics review",
+      "all_day": false,
+      "start": "2026-08-07T17:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 45,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:metrics"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:metrics-review:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    {
+      "reason": "Product analytics (Amplitude/Mixpanel/PostHog) has no connector yet, so live metric data isn't included \u2014 figures come from tickets/docs only.",
+      "category": "source_unavailable"
+    }
+  ]
+}

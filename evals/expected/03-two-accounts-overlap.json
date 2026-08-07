@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Jordan",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-work", "account_label": "Work", "source": "gmail", "status": "complete" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-invoice",
+      "title": "Approve the Q3 vendor invoice",
+      "detail": "The finance thread landed in both inboxes; needs your approval today.",
+      "section": "top_of_mind",
+      "citations": [
+        { "source": "gmail", "account_id": "sub-work", "account_label": "Work", "source_ref": "gmail:work-inv-77" },
+        { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:pers-inv-77" }
+      ],
+      "evidence": "Same invoice email was sent to both your work and personal addresses; finance asks for approval by EOD.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [ { "type": "open_source", "label": "Open message" } ],
+      "conflict_state": "none",
+      "dedup_key": "task:approve-q3-vendor-invoice:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": []
+}

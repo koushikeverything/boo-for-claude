@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-07T13:00:00-07:00",
+  "local_date": "2026-08-07",
+  "timezone": "America/Los_Angeles",
+  "preferred_name": "Alex",
+  "source_status": [
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "gmail", "status": "complete" },
+    { "account_id": "sub-personal", "account_label": "Personal", "source": "calendar", "status": "complete" },
+    { "account_id": "sub-work", "account_label": "Work", "source": "gmail", "status": "unavailable", "safe_reason": "reconnect needed" },
+    { "account_id": "sub-work", "account_label": "Work", "source": "calendar", "status": "unavailable", "safe_reason": "reconnect needed" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-lease",
+      "title": "Reply to the landlord about the lease renewal",
+      "detail": "They asked for a decision by today.",
+      "section": "top_of_mind",
+      "citations": [ { "source": "gmail", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "gmail:msg-lease" } ],
+      "evidence": "Landlord: 'Please let us know by Friday whether you'll renew.'",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 5,
+      "actions": [ { "type": "open_source", "label": "Open message" } ],
+      "conflict_state": "none",
+      "dedup_key": "task:lease-renewal-reply:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [
+    {
+      "id": "cal-dentist2",
+      "title": "Dentist",
+      "all_day": false,
+      "start": "2026-08-07T09:00:00",
+      "timezone": "America/Los_Angeles",
+      "duration_minutes": 45,
+      "citations": [ { "source": "calendar", "account_id": "sub-personal", "account_label": "Personal", "source_ref": "calendar:evt-dentist2" } ],
+      "conflict_state": "none",
+      "dedup_key": "event:dentist:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "Work account is disconnected (reconnect needed); nothing work-related is reflected.", "category": "source_unavailable" }
+  ]
+}

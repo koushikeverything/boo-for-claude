@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+*.env
+!.env.example
+
+# Databases / build artifacts
+*.db
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# Internal dev logs — kept locally, not published to the public repo
+docs/DRY-RUN-LOG.md
+docs/HANDOFF.md
+
+# Local Claude settings (machine-specific)
+.claude/settings.local.json

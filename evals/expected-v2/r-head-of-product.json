@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Maya",
+  "role": "head_of_product",
+  "team": "Product",
+  "source_status": [
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "intercom",
+      "account_label": "Intercom",
+      "source": "intercom",
+      "capability": "support",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-exec",
+      "title": "Exec escalation from Acme (churn risk)",
+      "detail": "Their champion flagged repeated checkout failures.",
+      "section": "top_of_mind",
+      "capability": "support",
+      "citations": [
+        {
+          "source": "intercom",
+          "account_id": "intercom",
+          "account_label": "Intercom",
+          "source_ref": "intercom:conv-900"
+        }
+      ],
+      "evidence": "Intercom: Acme (top-20 account) escalated churn risk over checkout errors.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "conflict_state": "none",
+      "dedup_key": "support:acme-churn-escalation:2026-08-07",
+      "rank": 0
+    },
+    {
+      "id": "t-blocker",
+      "title": "Launch blocker: pricing page sign-off",
+      "detail": "Blocks Thursday's launch; needs your decision.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "LAUNCH",
+          "source_ref": "linear:LAUNCH-12"
+        }
+      ],
+      "evidence": "LAUNCH-12 blocked pending Head of Product sign-off.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "tracking:LAUNCH-12-signoff:2026-08-07",
+      "rank": 1
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Updates",
+      "items": [
+        {
+          "id": "f-decisionreq",
+          "title": "Decision requested in #leadership",
+          "detail": "Trade-off on the Q4 roadmap ask.",
+          "section": "fyi",
+          "capability": "chat",
+          "citations": [
+            {
+              "source": "slack",
+              "account_id": "slack",
+              "account_label": "Slack",
+              "workspace": "#leadership",
+              "source_ref": "slack:C9/5"
+            }
+          ],
+          "evidence": "Thread awaiting your call on Q4 scope.",
+          "urgency": "soon",
+          "confidence": "high",
+          "effort_minutes": 5,
+          "conflict_state": "none",
+          "dedup_key": "chat:q4-roadmap-decision:2026-08-07"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-lead",
+      "title": "Leadership sync",
+      "all_day": false,
+      "start": "2026-08-07T11:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 30,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:lead-sync"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:leadership-sync:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": [
+    {
+      "reason": "Product analytics has no connector yet, so metric/KPI movement isn't included.",
+      "category": "source_unavailable"
+    }
+  ]
+}

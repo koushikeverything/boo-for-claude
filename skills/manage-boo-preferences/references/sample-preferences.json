@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "preferred_name": "Elisa",
+  "timezone": "America/Los_Angeles",
+  "brief_time": "07:30",
+  "weekend_behavior": "lighter",
+  "verbosity": "short",
+  "show_deals": false,
+  "included_fyi_categories": ["financial", "rsvp", "deliveries", "updates"],
+  "excluded_fyi_categories": ["deals"],
+  "important_people": ["Leo", "Maya"],
+  "important_topics": ["Little Sprouts Daycare", "field trip", "swim meet"],
+  "urgency_rules": [
+    "Anything from Leo's school is top of mind.",
+    "Bills due today are always top of mind."
+  ],
+  "default_calendar_account": "sub-personal",
+  "default_drafting_account": "sub-personal",
+  "accounts": [
+    {
+      "account_id": "sub-personal",
+      "label": "Personal",
+      "email_hint": "e***@gmail.com",
+      "status": "active",
+      "granted_capabilities": ["gmail", "calendar"]
+    },
+    {
+      "account_id": "sub-work",
+      "label": "Work",
+      "email_hint": "e***@acme.com",
+      "status": "reconnect_needed",
+      "granted_capabilities": ["gmail", "calendar", "drive"]
+    }
+  ]
+}

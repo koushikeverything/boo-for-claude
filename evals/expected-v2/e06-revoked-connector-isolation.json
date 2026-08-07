@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "software_engineer",
+  "team": "Growth",
+  "source_status": [
+    { "account_id": "github", "account_label": "GitHub", "source": "github", "capability": "code", "status": "complete" },
+    { "account_id": "google", "account_label": "Google Workspace", "source": "calendar", "capability": "productivity", "status": "complete" },
+    { "account_id": "slack", "account_label": "Slack", "source": "slack", "capability": "chat", "status": "unavailable", "safe_reason": "reconnect needed" }
+  ],
+  "top_of_mind": [
+    {
+      "id": "tom-ci",
+      "title": "CI failing on your branch feat/checkout-v2",
+      "detail": "The e2e job failed on the latest push.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [ { "source": "github", "account_id": "github", "account_label": "GitHub", "workspace": "acme/api", "source_ref": "github:acme/api/runs/9981" } ],
+      "evidence": "Workflow 'e2e' failed on feat/checkout-v2.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 20,
+      "conflict_state": "none",
+      "dedup_key": "code:ci-fail:2026-08-07"
+    }
+  ],
+  "fyi_groups": [],
+  "calendar": [],
+  "conflicts": [],
+  "omissions": [
+    { "reason": "Slack is disconnected (reconnect needed); mentions and threads aren't included. GitHub and Calendar were unaffected.", "category": "source_unavailable" }
+  ]
+}

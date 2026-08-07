@@ -1,0 +1,167 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-07T08:00:00+05:30",
+  "local_date": "2026-08-07",
+  "timezone": "Asia/Kolkata",
+  "preferred_name": "Koushik",
+  "role": "engineering_lead",
+  "team": "Growth",
+  "source_status": [
+    {
+      "account_id": "pagerduty",
+      "account_label": "PagerDuty",
+      "source": "pagerduty",
+      "capability": "incidents",
+      "status": "complete"
+    },
+    {
+      "account_id": "github",
+      "account_label": "GitHub",
+      "source": "github",
+      "capability": "code",
+      "status": "complete"
+    },
+    {
+      "account_id": "linear",
+      "account_label": "Linear",
+      "source": "linear",
+      "capability": "tracking",
+      "status": "complete"
+    },
+    {
+      "account_id": "google",
+      "account_label": "Google Workspace",
+      "source": "calendar",
+      "capability": "productivity",
+      "status": "complete"
+    },
+    {
+      "account_id": "slack",
+      "account_label": "Slack",
+      "source": "slack",
+      "capability": "chat",
+      "status": "complete"
+    }
+  ],
+  "top_of_mind": [
+    {
+      "id": "t-incident",
+      "title": "Active incident on checkout-service \u2014 you're the responder",
+      "detail": "Elevated 5xx since 07:12; sev-2.",
+      "section": "top_of_mind",
+      "capability": "incidents",
+      "citations": [
+        {
+          "source": "pagerduty",
+          "account_id": "pagerduty",
+          "account_label": "PagerDuty",
+          "source_ref": "pagerduty:INC-88"
+        }
+      ],
+      "evidence": "PagerDuty INC-88 triggered 07:12, assigned to you.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": null,
+      "conflict_state": "none",
+      "dedup_key": "incident:INC-88",
+      "rank": 0
+    },
+    {
+      "id": "t-stale",
+      "title": "3 stale PRs on your team need review",
+      "detail": "Open >2 days, blocking two merges.",
+      "section": "top_of_mind",
+      "capability": "code",
+      "citations": [
+        {
+          "source": "github",
+          "account_id": "github",
+          "account_label": "GitHub",
+          "workspace": "acme/api",
+          "source_ref": "github:acme/api/pulls?stale"
+        }
+      ],
+      "evidence": "3 PRs in acme/api awaiting first review > 48h.",
+      "urgency": "today",
+      "confidence": "high",
+      "effort_minutes": 30,
+      "conflict_state": "none",
+      "dedup_key": "code:stale-prs:2026-08-07",
+      "rank": 1
+    },
+    {
+      "id": "t-sprint",
+      "title": "Sprint at risk \u2014 2 stories unstarted",
+      "detail": "Sprint ends tomorrow.",
+      "section": "top_of_mind",
+      "capability": "tracking",
+      "citations": [
+        {
+          "source": "linear",
+          "account_id": "linear",
+          "account_label": "Linear",
+          "workspace": "GRW",
+          "source_ref": "linear:GRW-sprint-12"
+        }
+      ],
+      "evidence": "Sprint 12: 2 committed stories still in 'todo'.",
+      "urgency": "soon",
+      "confidence": "medium",
+      "effort_minutes": 15,
+      "conflict_state": "none",
+      "dedup_key": "tracking:sprint-12-risk:2026-08-07",
+      "rank": 2
+    }
+  ],
+  "fyi_groups": [
+    {
+      "group": "Deploys",
+      "items": [
+        {
+          "id": "f-rel",
+          "title": "Release 2.14 cut to production",
+          "detail": "Includes the rate-limit change.",
+          "section": "fyi",
+          "capability": "code",
+          "citations": [
+            {
+              "source": "github",
+              "account_id": "github",
+              "account_label": "GitHub",
+              "workspace": "acme/api",
+              "source_ref": "github:acme/api/releases/2.14"
+            }
+          ],
+          "evidence": "Release 2.14 published 06:40.",
+          "urgency": "informational",
+          "confidence": "high",
+          "effort_minutes": null,
+          "conflict_state": "none",
+          "dedup_key": "deploy:acme-api-2.14"
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-sprint",
+      "title": "Sprint planning",
+      "all_day": false,
+      "start": "2026-08-07T14:00:00+05:30",
+      "timezone": "Asia/Kolkata",
+      "duration_minutes": 60,
+      "citations": [
+        {
+          "source": "calendar",
+          "account_id": "google",
+          "account_label": "Google Workspace",
+          "source_ref": "calendar:sprint"
+        }
+      ],
+      "conflict_state": "none",
+      "dedup_key": "event:sprint-planning:2026-08-07"
+    }
+  ],
+  "conflicts": [],
+  "omissions": []
+}
