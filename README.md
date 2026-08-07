@@ -19,34 +19,89 @@ is fabricated, and it drafts but never sends.
 > **drafts and previews only** — it never sends, posts, or merges — and scheduled runs never change
 > anything. The brief you see is a pure function of a validated, grounded payload.
 
-## ⚡ Install (Claude Code)
+## Install
 
-This repo **is** a Claude Code plugin marketplace. Two commands and it's in every session:
+This repo **is** a Claude Code plugin marketplace — no backend, no build step. Pick whichever fits:
+
+### Claude apps (desktop / web) — no CLI
+
+**Settings → Plugins → Add marketplace → "Add from a repository"**, then paste the repo:
+
+```
+koushikeverything/boo-for-claude
+```
+
+<sub>Or the full git URL: `https://github.com/koushikeverything/boo-for-claude.git`.</sub>
+
+Once the marketplace syncs, **install the `boo` plugin** from it and toggle it on — it's now available
+in your chats and Cowork.
+
+### Claude Code — two commands
 
 ```bash
 claude plugin marketplace add koushikeverything/boo-for-claude
 claude plugin install boo@boo-marketplace
 ```
 
-Then say **"set up Boo"** to onboard, or **"what's my day ahead?"** / **"what's my engineering brief?"**
-to run it.
+<sub>`owner/repo` clones over SSH by default. No SSH keys? Use the HTTPS URL above. Update later with `claude plugin marketplace update boo-marketplace`; uninstall with `claude plugin uninstall boo`.</sub>
 
-<sub>`owner/repo` clones over SSH by default. No SSH keys? Add over HTTPS instead: `claude plugin marketplace add https://github.com/koushikeverything/boo-for-claude.git`. Update later with `claude plugin marketplace update boo-marketplace`; uninstall with `claude plugin uninstall boo`. On the Claude desktop/web app instead? See [claude.ai install](#claudeai-standalone-skill).</sub>
+### Other ways
 
----
+- **claude.ai standalone Skill** — `make package`, then upload `dist/team-brief-skill.zip` in
+  **Settings → Skills**.
+- **Dev / no install** — `claude --plugin-dir <path-to-your-boo-clone>` (see
+  [`docs/SETUP-CLAUDE.md`](docs/SETUP-CLAUDE.md)).
+
+## Getting started (after install)
+
+Boo lives in **Cowork** — Claude's agentic workspace — and works in any chat too. Once the plugin is
+enabled:
+
+### 1 · Onboard — say *"set up Boo"*
+
+Open **Cowork** (or a chat) and say **"set up Boo."** Onboarding is a short sequence of tap-to-select
+cards — no forms:
+
+- **Pick your role** — one of the nine, or **⚡ Superhuman** to choose your own mix of tools.
+- **Connect your tools** — for anything not connected yet, **Boo pops a Connect card right in the
+  conversation.** Click it, approve access in the provider's window, and you're back — **you're never
+  sent off to a settings page to hunt for connectors.** The final "Authorize" is always your click; Boo
+  never sees a password or token.
+- **Pick a delivery time** and **what to include** (calendar, urgent email, mentions, tickets,
+  incidents…).
+
+Boo saves a reviewable `role-profile.json`. Change it anytime in chat — *"add Linear," "pause GitHub,"
+"switch my role to Eng Lead," "move my brief to 7 AM."*
+
+### 2 · Run it on demand
+
+Ask **"what's my day ahead?"** or **"what's my engineering brief?"** Boo reads across your connected
+tools and returns the ranked, cited brief. Then dig in:
+
+- *"Why is the CI failure top of mind?"* · *"Show me PR #514."*
+- *"Draft the reply to Dana, but show me first."* — drafts only; nothing sends until you approve.
+
+### 3 · Schedule it — the "while you sleep" part
+
+In **Cowork**, create a **scheduled task** with the prompt from
+[`prompts/scheduled-team-brief.md`](prompts/scheduled-team-brief.md), set it to weekday mornings, and
+**enable the same connectors on the task** (a scheduled task doesn't inherit the ones you toggled in a
+chat). Each run arrives as its **own** Cowork session, **read-only** — Boo makes no changes unattended.
+
+> **Boo never sends, posts, or merges on its own.** Any action — a reply, a calendar event — is drafted
+> and waits for your explicit "yes."
 
 ## What you get
 
-Two briefings, one engine:
+**One brief, tuned to your role.** Every role connects a **work productivity account — Google Workspace
+(Gmail, Calendar, Drive) or Microsoft 365 — as the backbone** (email, calendar, docs), then layers on
+that role's tools: code, chat, tickets, incidents, design, support. Boo surfaces what matters for *your*
+role — the PRs waiting on *your* review, the incident you're on call for, the customer escalation, the
+launch decision blocking the team — as a scannable list:
 
-1. **Personal — "Your day ahead"**: bills due, forms to sign, RSVPs, deliveries, and today's calendar,
-   from Google Workspace (Gmail, Calendar, Drive).
-2. **Role-based team brief**: pick your role and Boo tunes the brief to it — the PRs waiting on *your*
-   review, the incident you're on call for, the customer escalation, the launch decision blocking the
-   team — ranked by what matters for that role.
+**Top of mind → FYI → On your calendar → coverage**
 
-Either way you get a scannable list — **Top of mind → FYI → On your calendar → coverage** — where every
-item carries a source you can click, and Boo is honest about anything it couldn't reach.
+Every item carries a source you can click, and Boo is honest about anything it couldn't reach.
 
 ## Roles
 
@@ -146,58 +201,6 @@ offers tools it can actually connect, and hides the rest. Available today:
 Your role decides which of these are offered, and which are required vs. optional. **⚡ Superhuman** gets
 the full menu to pick from. *Product analytics (Amplitude / Mixpanel / PostHog) is on the roadmap.*
 
-## Install
-
-### Claude apps (desktop / web) — no CLI
-
-In the Claude desktop or web app, go to **Settings → Plugins → Add marketplace → "Add from a
-repository"** and paste the repo:
-
-```
-koushikeverything/boo-for-claude
-```
-
-<sub>Or the full git URL: `https://github.com/koushikeverything/boo-for-claude.git`.</sub>
-
-Once the marketplace syncs, **install the `boo` plugin** from it and toggle it on — it's now available
-in your chats and Cowork. (This is the GUI twin of the CLI command below.)
-
-### Claude Code (one command)
-
-```bash
-claude plugin marketplace add koushikeverything/boo-for-claude
-claude plugin install boo@boo-marketplace
-```
-
-**Triggers** — *"set up Boo"* (onboard), *"what's my day ahead?"*, *"what's my engineering brief?"*,
-*"what needs my attention across my tools?"*.
-
-### claude.ai (standalone Skill)
-
-Build the upload bundles and add one in **Settings → Skills**:
-
-```bash
-make package     # → dist/daily-brief-skill.zip + dist/team-brief-skill.zip (self-contained)
-```
-
-### Dev / no install
-
-`claude --plugin-dir <path-to-your-boo-clone>` — see [`docs/SETUP-CLAUDE.md`](docs/SETUP-CLAUDE.md).
-
-### Connect your tools
-
-Boo orchestrates your existing connectors — it never asks for passwords or tokens. Onboarding surfaces
-an in-chat **Connect** card for each tool; you complete the provider's own OAuth (the final "Authorize"
-is always yours). The personal brief needs **Google Workspace**; the team brief uses your role's tools
-from the [Connectors](#connectors--one-source-of-truth-across-your-stack) list above.
-
-### Schedule it
-
-Paste [`prompts/scheduled-daily-brief.md`](prompts/scheduled-daily-brief.md) (personal) or
-[`prompts/scheduled-team-brief.md`](prompts/scheduled-team-brief.md) (team) into a Cowork scheduled
-task, enable the same connectors **on the task**, and pick a weekday time. Details:
-[`docs/SETUP-SCHEDULE.md`](docs/SETUP-SCHEDULE.md).
-
 ## How it works (in 60 seconds)
 
 ```
@@ -221,7 +224,7 @@ boo-for-claude/
 │   ├── plugin.json
 │   └── marketplace.json
 ├── skills/                  ← 7 Skills (the workflows Claude follows)
-│   ├── daily-brief/         ←   personal "Your day ahead" + references + scripts + schemas
+│   ├── daily-brief/         ←   Google-Workspace brief (v1) + the shared validator/dedup/date scripts
 │   ├── team-brief/          ←   role/team brief — self-contained bundle + per-role packs
 │   ├── onboarding/          ←   card-driven first-run setup
 │   ├── manage-role-profile/ ←   view/edit/pause/remove your profile
