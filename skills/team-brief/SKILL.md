@@ -45,10 +45,15 @@ connected**. Follow the invariants in the project `CLAUDE.md`. Detailed policy l
    Every displayed item needs ≥1 citation, a `dedup_key`, urgency, confidence, `conflict_state`, and
    a `capability`. Fix all errors before rendering.
 
-6. **Render native Markdown** per `references/output-style.md`: `# Your day ahead` → greeting →
-   `## 🧠 Top of mind` (in `rank` order) → `## 🔔 FYI` (role subgroups) → `## 🗓 On your calendar` →
-   a one-line coverage sentence. Bold only key actions/amounts/deadlines/titles. No fake buttons.
-   See `examples/engineer-brief.md` for the target rendering.
+6. **Render the brief as a native card — a self-contained Artifact** per `references/render-artifact.md`
+   (**not** flat markdown, **not** an inline widget). Fill `assets/brief-card.template.html`: a header
+   (`Your day ahead` + local date + run tag) → greeting → 🧠 Top of mind (in `rank` order) → 🔔 FYI
+   (role subgroups) → 🗓 On your calendar → a one-line coverage sentence. Each item is a card with an
+   effort pill, a **source chip** (source + account + workspace), a real **deep-link** for any
+   `open_source` action (from `citation.link`), and an accent **action chip** for a `say_command`.
+   Presentation is a pure function of the validated payload. **Only if the surface can't render an
+   Artifact** (e.g. Claude Code CLI) fall back to the structured Markdown in `references/output-style.md`
+   — still cited, still deep-linked, still ending in an action nudge. See `examples/engineer-brief.md`.
 
 7. **Coverage line** from the gating report + `source_status`: name what was checked; flag missing
    mandatory slots as a **blocking gap** ("Code (GitHub) isn't connected — your engineering brief is

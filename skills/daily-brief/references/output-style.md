@@ -1,7 +1,11 @@
 # Output style — Claude-native presentation contract
 
-The default output is a **response inside Claude**, not HTML and not an email. Render the validated
-payload as Markdown using the exact structure below. Presentation is a pure function of the payload.
+**Primary rendering is a self-contained Artifact card** (same contract as the team-brief skill:
+`skills/team-brief/references/render-artifact.md` + `assets/brief-card.template.html`) — a card with an
+effort pill, a source chip, a real deep-link per `open_source` action, and an accent action chip per
+`say_command`, ending in a chat action nudge. The Markdown structure below is the **fallback** for
+surfaces that can't render an Artifact (e.g. Claude Code CLI). Either way, presentation is a pure
+function of the validated payload — every item cited, no fabrication.
 
 ## Structure
 

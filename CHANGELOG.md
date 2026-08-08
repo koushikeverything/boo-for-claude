@@ -4,6 +4,22 @@ All notable changes to the **Boo for Claude** plugin. Format follows
 [Keep a Changelog](https://keepachangelog.com/); this project uses semantic-ish versioning while
 pre-1.0 (minor = features, patch = fixes/docs).
 
+## [0.4.0] — 2026-08-08
+
+### Changed
+- **The brief now renders as a self-contained Artifact card, not flat markdown.** A skill's markdown
+  renders "flat/pasted," and inline widgets proved fragile (icon-webfont → empty boxes). The brief is
+  now a native card: per-item cards with an effort pill, a source chip (source + account), a real
+  deep-link per `open_source` action, an accent action chip per `say_command`, severity stripes, and a
+  coverage line — ending in a chat action nudge. Markdown remains the fallback for surfaces without
+  Artifacts (e.g. Claude Code CLI).
+
+### Added
+- `skills/team-brief/references/render-artifact.md` (rendering contract) +
+  `assets/brief-card.template.html` (self-contained, theme-aware, no webfont).
+- `tests/test_render_contract.py` — fails if the card template pulls any external/webfont dependency or
+  if the skill/output-style aren't wired to the Artifact renderer.
+
 ## [0.3.0] — 2026-08-08
 
 ### Added

@@ -1,0 +1,100 @@
+<!--
+  Boo brief card — self-contained Artifact template. Fill from the VALIDATED payload.
+  RULES (enforced by tests/test_render_contract.py): keep it self-contained — no external stylesheet
+  or font links, no remote scripts, no imported CSS, no icon webfont (emoji / inline SVG only), no CDN
+  or font URLs. System fonts; theme-aware (light + dark).
+  Structure: one card per item; add class "today" for urgency today, "alert" for alert FYI items.
+  Per item: an open_source action becomes a real deep-link chip (chip open); a say_command becomes an
+  accent action chip (chip act). Use whichever the item has. Never render a dead button; the act chip
+  maps to the chat follow-up nudge under the card.
+-->
+<title>Your day ahead — Boo</title>
+<style>
+  :root{
+    --bg:#F4F6FB;--surface:#FFF;--surface-2:#F1F3F9;--chip:#EEF1F8;--border:#E3E7F1;--hair:#EDEFF6;
+    --text:#181D2C;--text-2:#4A5266;--text-3:#858DA2;--accent:#E0503A;--accent-soft:#FBE7E2;
+    --today-ink:#B4600A;--today-bg:#FBEFDC;--alert-ink:#B5372A;--alert-bg:#FBE4E0;--ok:#0E8A6B;--link:#2A63D6;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0C1120;--surface:#141A29;--surface-2:#1A2133;--chip:#1E263A;--border:#28324c;--hair:#222b42;
+    --text:#EDF0F8;--text-2:#AEB6CC;--text-3:#7A8299;--accent:#FF6A4D;--accent-soft:#3a201b;
+    --today-ink:#E7A544;--today-bg:#33280f;--alert-ink:#FF7A69;--alert-bg:#3a1f1b;--ok:#38CBA0;--link:#7AA6FF;}}
+  :root[data-theme="light"]{--bg:#F4F6FB;--surface:#FFF;--surface-2:#F1F3F9;--chip:#EEF1F8;--border:#E3E7F1;--hair:#EDEFF6;--text:#181D2C;--text-2:#4A5266;--text-3:#858DA2;--accent:#E0503A;--accent-soft:#FBE7E2;--today-ink:#B4600A;--today-bg:#FBEFDC;--alert-ink:#B5372A;--alert-bg:#FBE4E0;--ok:#0E8A6B;--link:#2A63D6;}
+  :root[data-theme="dark"]{--bg:#0C1120;--surface:#141A29;--surface-2:#1A2133;--chip:#1E263A;--border:#28324c;--hair:#222b42;--text:#EDF0F8;--text-2:#AEB6CC;--text-3:#7A8299;--accent:#FF6A4D;--accent-soft:#3a201b;--today-ink:#E7A544;--today-bg:#33280f;--alert-ink:#FF7A69;--alert-bg:#3a1f1b;--ok:#38CBA0;--link:#7AA6FF;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:26px 18px 38px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px 22px 18px}
+  .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding-bottom:14px;border-bottom:1px solid var(--hair)}
+  h1{font-size:23px;margin:0;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  .date{font-size:13px;color:var(--text-3)}
+  .tag{font-size:11px;font-weight:600;color:var(--text-2);background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:2px 9px;margin-left:auto}
+  .greet{font-size:14.5px;color:var(--text-2);margin:12px 0 4px}
+  .sec{display:flex;align-items:center;gap:8px;margin:22px 0 10px;font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--text-2)}
+  .sec .rule{flex:1;height:1px;background:var(--hair)}
+  .sub{font-size:12px;font-weight:700;color:var(--text-3);margin:12px 0 2px}
+  .list{display:flex;flex-direction:column;gap:10px}
+  .item{position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:12px 14px 12px 16px}
+  .item::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--border)}
+  .item.today::before{background:var(--today-ink)}.item.alert::before{background:var(--alert-ink)}
+  .irow{display:flex;align-items:flex-start;gap:9px;flex-wrap:wrap}
+  .pill{font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text-2);background:var(--chip);border-radius:6px;padding:2px 7px;white-space:nowrap;margin-top:1px}
+  .pill.today{color:var(--today-ink);background:var(--today-bg)}
+  .ttl{font-size:15px;font-weight:700;line-height:1.32}
+  .det{font-size:13.5px;color:var(--text-2);margin-top:3px}
+  .meta{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:9px}
+  .src{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--text-3);border:1px solid var(--border);border-radius:999px;padding:2px 9px}
+  .src b{color:var(--text-2);font-weight:600}
+  .chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;text-decoration:none;border-radius:999px;padding:4px 11px;cursor:pointer;border:1px solid transparent}
+  .chip.open{color:var(--link);border-color:var(--border);background:var(--surface)}
+  .chip.act{color:#fff;background:var(--accent);border-color:var(--accent)}
+  .cal{display:flex;gap:11px;align-items:baseline}
+  .cal .t{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .cov{display:flex;gap:9px;margin-top:20px;padding-top:14px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--text-3)}
+  a{color:var(--link)} :focus-visible{outline:2px solid var(--link);outline-offset:2px}
+</style>
+<div class="wrap"><div class="card">
+  <div class="head"><h1>Your day ahead</h1><span class="date">{{local_date, e.g. Friday, August 7}}</span><span class="tag">{{Scheduled | On-demand}} run</span></div>
+  <p class="greet">Morning, {{preferred_name}}. {{one-line framing}}</p>
+
+  <div class="sec">🧠 Top of mind <span class="rule"></span></div>
+  <div class="list">
+    <!-- repeat per top_of_mind item, in rank order. add class "today" when urgency=="today" -->
+    <div class="item today">
+      <div class="irow">
+        <span class="pill today">{{effort}} min</span>
+        <div>
+          <div class="ttl">{{title}}</div>
+          <div class="det">{{detail}}</div>
+          <div class="meta">
+            <span class="src">💻 <b>{{source}}</b> · {{workspace}}</span>
+            <a class="chip open" href="{{citation.link}}" target="_blank" rel="noopener">{{open_source.label}} ↗</a>
+            <button class="chip act" type="button">✎ {{say_command.label}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">🔔 FYI <span class="rule"></span></div>
+  <!-- repeat per fyi_group: a .sub label then a .list of .item (add "alert" for alerts) -->
+  <div class="sub">{{group}}</div>
+  <div class="list">
+    <div class="item alert">
+      <div class="irow"><div>
+        <div class="ttl">{{title}}</div><div class="det">{{detail}}</div>
+        <div class="meta"><span class="src">📈 <b>{{source}}</b> · {{workspace}}</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="sec">🗓 On your calendar <span class="rule"></span></div>
+  <div class="list">
+    <!-- repeat per calendar event, all-day first -->
+    <div class="item"><div class="cal"><span class="t">{{start}}</span>
+      <div><div class="ttl">{{title}}</div><div class="det">{{duration}} min · {{context?}} · {{source}} · {{account}}</div></div></div></div>
+  </div>
+
+  <div class="cov">🛡️ <span>{{coverage line — what was checked; blocking gap for missing-mandatory; reconnect for degraded}}</span></div>
+</div></div>

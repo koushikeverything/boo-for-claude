@@ -1,7 +1,12 @@
 # Output style — role brief presentation contract
 
-Native Claude Markdown. Same skeleton for every role; role-specific content. Presentation is a pure
-function of the validated payload.
+> **Primary rendering is the Artifact card** — see `references/render-artifact.md` and
+> `assets/brief-card.template.html`. The Markdown below is the **fallback** for surfaces that can't
+> render an Artifact (e.g. Claude Code CLI). Never prefer this markdown on a surface that supports
+> Artifacts. Either way, every item stays cited, deep-linked, and the output ends in an action nudge.
+
+Same skeleton for every role; role-specific content. Presentation is a pure function of the validated
+payload.
 
 ## Structure
 

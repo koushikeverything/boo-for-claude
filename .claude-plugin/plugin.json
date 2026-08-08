@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "boo",
   "displayName": "Boo for Claude",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A Claude-native planning agent. Produces evidence-grounded briefings — a personal 'Your day ahead' from Google Workspace, and role-based team briefs for product teams across GitHub, Slack, Google/Microsoft 365, Linear/Jira, PagerDuty, Sentry and more. Delivered inside Claude, drafts/preview only (never sends or posts autonomously), with explicit approval before any change.",
   "author": { "name": "Boo for Claude" },
   "license": "MIT",

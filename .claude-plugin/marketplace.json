@@ -4,13 +4,13 @@
   "owner": { "name": "Boo for Claude" },
   "metadata": {
     "description": "Boo for Claude — evidence-grounded personal and role-based team briefings, delivered inside Claude.",
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "plugins": [
     {
       "name": "boo",
       "source": "./",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "description": "A Claude-native planning agent: a personal 'Your day ahead' from Google Workspace, and role-based team briefs (9 roles incl. a free-pick Superhuman role) across GitHub, Slack, Google/M365, Linear/Jira, PagerDuty, Sentry, Figma, Notion and more. Delivered inside Claude, drafts/preview only, approval-gated.",
       "author": { "name": "Boo for Claude" },
       "license": "MIT",
